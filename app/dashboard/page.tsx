@@ -3,8 +3,10 @@ import { redirect } from "next/navigation";
 import Link from "next/link";
 import { buttonVariants } from "@/components/ui/button";
 import { prisma } from "../utils/db";
+import { BlogPostCard } from "@/components/general/BlogPostCard";
 
 async function getData(userId: string) {
+  await new Promise((resolve) => setTimeout(resolve, 2000));
   const data = await prisma.postly.findMany({
     where: {
       authorId: userId,
@@ -39,10 +41,8 @@ export default async function DashboardRoute() {
 
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
       {data.map((item) => (
-        // <BlogPostCard data={item} key={item.id} />
-        <div key = {item.id}>
-          <h1>{item.title}</h1>
-        </div>
+        <BlogPostCard data={item} key={item.id} />
+       
       ))}
     </div>
   </div>

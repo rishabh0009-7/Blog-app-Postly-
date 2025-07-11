@@ -1,5 +1,4 @@
 "use client"
-import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
@@ -11,6 +10,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { handleSubmission } from "@/app/action";
+import { Submitbutton } from "@/components/general/SubmitButton";
 export default function createBlog(){
 
  
@@ -38,7 +38,7 @@ export default function createBlog(){
               <Input name="url" required type="url" placeholder="Image url" />
             </div>
 
-           <Button>Create Post</Button>
+          <Submitbutton/>
           </form>
 
                 </CardContent>
