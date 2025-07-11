@@ -27,7 +27,8 @@ export default async function DashboardRoute() {
     redirect("/api/auth/register");
   }
 // why we use get user instead of isauthenticated coz ye boolean dega but we want user id 
-  const data = await getData(user.id);
+const data = await getData(user?.id);
+
 
   return (
     <div>
