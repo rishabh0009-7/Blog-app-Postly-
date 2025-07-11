@@ -3,6 +3,8 @@ import { prisma } from "./utils/db";
 import { Suspense } from "react";
 import { Skeleton } from "@/components/ui/skeleton";
 
+
+// this means to revalidate data after every 60 sec
 export const revalidate = 60;
 
 async function getData() {
